@@ -1,12 +1,43 @@
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>Crear Post</ion-title>
-  </ion-navbar>
-
+  <ion-toolbar color="dark">
+    <ion-title>
+      Crear Post
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cerrar</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Titulo</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button block icon-left>
+          <ion-icon name="photos"></ion-icon>
+          Seleccionar
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block icon-left>
+          <ion-icon name="camera"></ion-icon>
+          Camara
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 
 </ion-content>
