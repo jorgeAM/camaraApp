@@ -8,16 +8,12 @@
 
 <ion-content>
 
-  <ion-card>
-    <img src="https://im.tiscali.cz/booom/2017/07/13/828486-rickamorty-653x367.jpg"/>
+  <ion-card *ngFor="let post of posts | async">
+    <img [src]="post.img"/>
     <ion-card-content>
       <ion-card-title>
-        Rick & Morty
-        </ion-card-title>
-      <p>
-        The most popular industrial group ever, and largely
-        responsible for bringing the music to a mass audience.
-      </p>
+        {{post.titulo}}
+      </ion-card-title>
     </ion-card-content>
 
     <ion-row no-padding>
