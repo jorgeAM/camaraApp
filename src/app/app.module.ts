@@ -16,6 +16,9 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SubirPage } from '../pages/subir/subir';
 
+//PIPES
+import { PipesModule } from "../pipes/pipes.module";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -27,7 +30,8 @@ import { SubirPage } from '../pages/subir/subir';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FirebaseConfig.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    PipesModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
