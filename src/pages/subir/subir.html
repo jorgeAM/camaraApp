@@ -20,18 +20,22 @@
       <ion-label floating>Titulo</ion-label>
       <ion-input type="text" [(ngModel)]="titulo"></ion-input>
     </ion-item>
+
+    <ion-item *ngIf="image">
+      <img [src]="image"/>
+    </ion-item>
   </ion-list>
 
   <ion-grid>
     <ion-row>
       <ion-col>
-        <button ion-button block icon-left>
+        <button ion-button block (click)="picker()" icon-left>
           <ion-icon name="photos"></ion-icon>
           Seleccionar
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button block icon-left>
+        <button ion-button block (click)="camara()" icon-left>
           <ion-icon name="camera"></ion-icon>
           Camara
         </button>

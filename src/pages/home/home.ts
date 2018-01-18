@@ -18,7 +18,7 @@ export class HomePage {
     public modalCtrl: ModalController,
     private afDB: AngularFireDatabase
   ) {
-    this.posts = afDB.list('post').valueChanges();
+    this.posts = this.afDB.list('post').valueChanges();
    }
 
   mostrarModal(){

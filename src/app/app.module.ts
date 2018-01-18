@@ -19,6 +19,12 @@ import { SubirPage } from '../pages/subir/subir';
 //PIPES
 import { PipesModule } from "../pipes/pipes.module";
 
+//PLUGIN DE CAMARA
+import { Camera } from '@ionic-native/camera';
+
+//PLUGIN PARA IMAGEPICKER
+import { ImagePicker } from '@ionic-native/image-picker';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -43,7 +49,9 @@ import { PipesModule } from "../pipes/pipes.module";
     StatusBar,
     SplashScreen,
     AngularFireDatabase,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Camera,
+    ImagePicker
   ]
 })
 export class AppModule {}
