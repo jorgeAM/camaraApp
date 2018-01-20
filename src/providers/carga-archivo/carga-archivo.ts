@@ -37,6 +37,7 @@ export class CargaArchivoProvider {
     return promesa;
   }
 
+  /*
   cargarImagenAlternativo(image: Archivo){
     return new Promise((resolve, reject) => {
       this.showToat('Cargando...');
@@ -55,10 +56,10 @@ export class CargaArchivoProvider {
         console.log('archivo subido');
         this.showToat('Se subio la imagen correctamente');
         resolve(uploadTask.snapshot);
-      }
-      );
+      });
     });
   }
+  */
 
   showToat(mensaje:string){
     let toast = this.toastCtrl.create({
