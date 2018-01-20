@@ -25,6 +25,9 @@ import { Camera } from '@ionic-native/camera';
 //PLUGIN PARA IMAGEPICKER
 import { ImagePicker } from '@ionic-native/image-picker';
 
+//PROVIDERS
+import { CargaArchivoProvider } from '../providers/carga-archivo/carga-archivo';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -51,7 +54,8 @@ import { ImagePicker } from '@ionic-native/image-picker';
     AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
-    ImagePicker
+    ImagePicker,
+    CargaArchivoProvider
   ]
 })
 export class AppModule {}

@@ -3,10 +3,16 @@
     <ion-title>
       {{ titulo | placeHolder }}
     </ion-title>
-    <ion-buttons start>
+    <ion-buttons start *ngIf="!image">
       <button ion-button (click)="dismiss()">
         <span ion-text color="primary" showWhen="ios">Cerrar</span>
         <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end *ngIf="image">
+      <button ion-button (click)="uploadImagenAlternativo()">
+        Subir
       </button>
     </ion-buttons>
   </ion-toolbar>
@@ -24,6 +30,7 @@
     <ion-item *ngIf="image">
       <img [src]="image"/>
     </ion-item>
+
   </ion-list>
 
   <ion-grid>

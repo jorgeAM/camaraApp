@@ -37,6 +37,29 @@ export class CargaArchivoProvider {
     return promesa;
   }
 
+  cargarImagenAlternativo(image: Archivo){
+    return new Promise((resolve, reject) => {
+      this.showToat('Cargando...');
+      let nombreArchivo:string = new Date().valueOf().toString();
+      let storageRef = firebase.storage().ref('img/'+nombreArchivo+'.jpg')
+      let uploadTask = storageRef.putString(image.img, 'data_url');
+
+      uploadTask.on('state_changed',
+      () => {},
+      (err) => {
+        console.log(err);
+        this.showToat('Hubo un error al subir archivo');
+        reject(err);
+      },
+      () => {
+        console.log('archivo subido');
+        this.showToat('Se subio la imagen correctamente');
+        resolve(uploadTask.snapshot);
+      }
+      );
+    });
+  }
+
   showToat(mensaje:string){
     let toast = this.toastCtrl.create({
       message: mensaje,
