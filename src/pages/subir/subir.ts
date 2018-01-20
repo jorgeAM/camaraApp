@@ -65,12 +65,4 @@ export class SubirPage {
     this.cargaArchivoServicio.cargarImagenFirebase(archivo);
   }
 
-  uploadImagenAlternativo(){
-    let archivo = {
-      img: this.imagen64,
-      titulo: this.titulo
-    }
-    this.cargaArchivoServicio.cargarImagenAlternativo(archivo);
-  }
-
 }
