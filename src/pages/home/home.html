@@ -8,7 +8,7 @@
 
 <ion-content>
 
-  <ion-card *ngFor="let post of misPost">
+  <ion-card *ngFor="let post of misPosts">
     <img [src]="post.img"/>
     <ion-card-content>
       <ion-card-title>
@@ -33,5 +33,9 @@
       <button (click)="mostrarModal()" ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
     </ion-fab-list>
   </ion-fab>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" [enabled]="hayMas">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 </ion-content>

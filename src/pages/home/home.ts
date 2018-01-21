@@ -14,7 +14,8 @@ import { CargaArchivoProvider } from "../../providers/carga-archivo/carga-archiv
 })
 export class HomePage {
   //posts: Observable<any[]>;
-  misPost: any;
+  misPosts: any;
+  hayMas: boolean = true;
 
   constructor(
     public navCtrl: NavController,
@@ -23,11 +24,19 @@ export class HomePage {
     private cargaArchivoServicio: CargaArchivoProvider
   ) {
     //this.posts = this.afDB.list('post').valueChanges();
-    this.misPost = this.cargaArchivoServicio.imagenes;
+    this.misPosts = this.cargaArchivoServicio.imagenes;
    }
 
   mostrarModal(){
     this.modalCtrl.create(SubirPage).present();
+  }
+
+  //evento de infinity scroll
+  doInfinite(infiniteScroll) {
+    this.cargaArchivoServicio.cargarImagenes().then((hayMas: boolean) => {
+      hayMas ? infiniteScroll.complete() : this.hayMas = false;
+    });
+
   }
 
 }

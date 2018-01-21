@@ -21,7 +21,7 @@ export class CargaArchivoProvider {
     //retorna un Obsrvable, lo tendremos que convertir con map
     return this.afDB.list('/post', ref => ref.orderByKey().limitToLast(1))
         .valueChanges().map((post: any) => {
-          console.log(post);
+          //console.log(post);
           this.lastKey = post[0].key;
           this.imagenes.push(post[0]);
         });
