@@ -25,6 +25,9 @@ import { Camera } from '@ionic-native/camera';
 //PLUGIN PARA IMAGEPICKER
 import { ImagePicker } from '@ionic-native/image-picker';
 
+//PLUGIN PARA COMPARTIR EN REDS SOCIALES
+import { SocialSharing } from '@ionic-native/social-sharing';
+
 //PROVIDERS
 import { CargaArchivoProvider } from '../providers/carga-archivo/carga-archivo';
 
@@ -55,7 +58,8 @@ import { CargaArchivoProvider } from '../providers/carga-archivo/carga-archivo';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
     ImagePicker,
-    CargaArchivoProvider
+    CargaArchivoProvider,
+    SocialSharing
   ]
 })
 export class AppModule {}
