@@ -62,7 +62,9 @@ export class SubirPage {
       img: this.imagen64,
       titulo: this.titulo
     }
-    this.cargaArchivoServicio.cargarImagenFirebase(archivo);
+    this.cargaArchivoServicio.cargarImagenFirebase(archivo).then(() => {
+      this.dismiss();
+    });
   }
 
 }
